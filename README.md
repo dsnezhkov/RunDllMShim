@@ -19,7 +19,7 @@ rundll32.exe
 				// public static int method(string arg) 
 				//  -or-
 				// b. if omitted it will call your default
-				// public static int RunCode(string arg)
+				// public static int RunCode(String:)
 
 	[<string arg>]		// a. specify string argument 
 				//  -or-
@@ -29,7 +29,12 @@ rundll32.exe
 ## Example
 
 ```
-C:\Windows\System32\rundll32.exe  .\RundllShim.dll,rdl v4.0.30319 C:\Temp\ManagedAssembly.dll KlassLibrary.Klass
-C:\Windows\System32\rundll32.exe  .\RundllShim.dll,rdl v4.0.30319 C:\Temp\ManagedAssembly.dll KlassLibrary.Klass GetLength 
-C:\Windows\System32\rundll32.exe  .\RundllShim.dll,rdl v4.0.30319 C:\Temp\ManagedAssembly.dll KlassLibrary.Klass GetLength "Hello"
+// Using generic RunCode(String)
+rundll32.exe  .\RundllShim.dll,rdl v4.0.30319 C:\Temp\KlassLibrary.dll KlassLibrary.Klass
+
+// Invoking specific method
+rundll32.exe  .\RundllShim.dll,rdl v4.0.30319 C:\Temp\KlassLibrary.dll KlassLibrary.Klass SKlassMethod
+
+// Invoking specific method and passing a String if you need to make further decisions 
+rundll32.exe  .\RundllShim.dll,rdl v4.0.30319 C:\Temp\KlassLibrary.dll KlassLibrary.Klass SKlassMethod "GetNetwork"
 ```
